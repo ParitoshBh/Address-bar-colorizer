@@ -130,11 +130,55 @@ function check_color($value)
 /**
  * Add meta to head of website.
  */
-function address_bar_colorizer_add_meta_head(){
+function address_bar_colorizer_add_meta_head()
+{
+    $sitewideColorEnabled = get_option('address-bar-colorizer-sitewide-enabled');
+
+    if ($sitewideColorEnabled == 1) {
+        // Sitewide color is enabled. Override every other setting
+        $defaultColorCode = get_option('address-bar-colorizer-default-color');
+
+        if ($defaultColorCode == '') {
+            // This indicates plugin isn't initialized for homepage
+            // Do nothing. Output nothing to header
+            $output = '';
+        } else {
+            $output = '<meta name="theme-color" content="' . $defaultColorCode . '">';
+        }
+    } else {
+        // Respect individual post color codes
+        if (is_front_page()) {
+            // Output homepage color
+            $defaultColorCode = get_option('address-bar-colorizer-default-color');
+
+            if ($defaultColorCode == '') {
+                // This indicates plugin isn't initialized for homepage
+                // Do nothing. Output nothing to header
+                $output = '';
+            } else {
+                $output = '<meta name="theme-color" content="' . $defaultColorCode . '">';
+            }
+        } else if (is_single()) {
+            // Output single post color
+            $postColorCode = get_post_meta(get_the_ID(), 'address-bar-colorizer', true);
+
+            if ($postColorCode == '') {
+                // This indicates plugin isn't initialized for current post
+                // Do nothing. Output nothing to header
+                $output = '';
+            } else {
+                $output = '<meta name="theme-color" content="' . $postColorCode . '">';
+            }
+        } else {
+            $output = '';
+        }
+    }
+
+    // For debugging purpose only
     $startPluginComment = "\n\n<!-- START ADDRESS BAR COLORIZER -->\n\n";
     $endPluginComment = "\n\n<!-- END ADDRESS BAR COLORIZER -->\n\n\n";
-    $output = '<meta name="theme-color" content="#1C262B">';
-    echo $startPluginComment. $output . $endPluginComment;
+
+    echo $startPluginComment . $output . $endPluginComment;
 }
 
 add_action('wp_head', 'address_bar_colorizer_add_meta_head');
