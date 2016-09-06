@@ -141,7 +141,7 @@ function address_bar_colorizer_add_meta_head()
         if ($defaultColorCode == '') {
             // This indicates plugin isn't initialized for homepage
             // Do nothing. Output nothing to header
-            $output = '';
+            return;
         } else {
             $output = '<meta name="theme-color" content="' . $defaultColorCode . '">';
         }
@@ -154,7 +154,7 @@ function address_bar_colorizer_add_meta_head()
             if ($defaultColorCode == '') {
                 // This indicates plugin isn't initialized for homepage
                 // Do nothing. Output nothing to header
-                $output = '';
+                return;
             } else {
                 $output = '<meta name="theme-color" content="' . $defaultColorCode . '">';
             }
@@ -165,12 +165,12 @@ function address_bar_colorizer_add_meta_head()
             if ($postColorCode == '') {
                 // This indicates plugin isn't initialized for current post
                 // Do nothing. Output nothing to header
-                $output = '';
+                return;
             } else {
                 $output = '<meta name="theme-color" content="' . $postColorCode . '">';
             }
         } else {
-            $output = '';
+            return;
         }
     }
 
