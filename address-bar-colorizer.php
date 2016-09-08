@@ -3,7 +3,7 @@
  * Plugin Name: Address Bar Colorizer
  * Plugin URI: https://wordpress.org/plugins/address-bar-colorizer/
  * Description: Sets color for each post (or sitewide) of website to colorize address bar of Google Chrome web browser on mobile.
- * Version: 1.0
+ * Version: 1.1
  * Author: Paritosh Bhatia
  * Author URI: http://paritoshbh.me
  * License:     GPL-2.0+
@@ -174,11 +174,12 @@ function address_bar_colorizer_add_meta_head()
         }
     }
 
-    // For debugging purpose only
-    $startPluginComment = "\n\n<!-- START ADDRESS BAR COLORIZER -->\n\n";
-    $endPluginComment = "\n\n<!-- END ADDRESS BAR COLORIZER -->\n\n\n";
-
-    echo $startPluginComment . $output . $endPluginComment;
+//    // For debugging purpose only
+//    $startPluginComment = "\n\n<!-- START ADDRESS BAR COLORIZER -->\n\n";
+//    $endPluginComment = "\n\n<!-- END ADDRESS BAR COLORIZER -->\n\n\n";
+//
+//    echo $startPluginComment . $output . $endPluginComment;
+    echo $output;
 }
 
 add_action('wp_head', 'address_bar_colorizer_add_meta_head');
