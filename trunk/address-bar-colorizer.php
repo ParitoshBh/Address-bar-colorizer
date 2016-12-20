@@ -3,7 +3,7 @@
  * Plugin Name: Address Bar Colorizer
  * Plugin URI: https://wordpress.org/plugins/address-bar-colorizer/
  * Description: Sets color for each post (or sitewide) of website to colorize address bar of Google Chrome web browser on mobile.
- * Version: 1.1
+ * Version: 1.2
  * Author: Paritosh Bhatia
  * Author URI: http://paritoshbh.me
  * License:     GPL-2.0+
@@ -33,7 +33,7 @@ function address_bar_colorizer_meta_box_callback($post)
 {
     // Don't forget to include nonces!
     $postColorCode = get_post_meta($post->ID, 'address-bar-colorizer', true);
-    echo '<input type="text" name="address-bar-colorizer-post-color" value="' . $postColorCode . '" 
+    echo '<input type="text" name="address-bar-colorizer-post-color" value="' . $postColorCode . '"
     class="address-bar-colorizer-color-field"/>';
 }
 
@@ -92,10 +92,12 @@ function address_bar_colorizer_menu_register_settings()
  */
 function address_bar_colorizer_color_picker($hook_suffix)
 {
-    // Check that $hook_suffix is appropriate for your admin page
-    wp_enqueue_style('wp-color-picker');
-    wp_enqueue_script('address-bar-colorizer-script', plugins_url('color-picker-helper.js', __FILE__),
-        array('wp-color-picker'), false, true);
+    // Load the color picker script only on setting page and post page
+    if ($hook_suffix === 'post.php' || $hook_suffix === 'settings_page_address-bar-colorizer-settings') {
+      wp_enqueue_style('wp-color-picker');
+      wp_enqueue_script('address-bar-colorizer-script', plugins_url('color-picker-helper.js', __FILE__),
+          array('wp-color-picker'), false, true);
+    }
 }
 
 add_action('admin_enqueue_scripts', 'address_bar_colorizer_color_picker');
