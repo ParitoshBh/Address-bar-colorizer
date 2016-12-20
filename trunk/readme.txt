@@ -60,7 +60,8 @@ That's how it works. The plugin ONLY applies colorization to Google Chrome mobil
 * Fixed: Removed plugin details from header.
 
 = 1.2 =
-* Update: Plugin is now compatible with Wordpress 4.7.
+* Plugin is now compatible with Wordpress 4.7.
+* Fixed: Plugin script loading on required pages of Dashboard only.
 
 == Upgrade notice ==
 
@@ -72,4 +73,5 @@ That's how it works. The plugin ONLY applies colorization to Google Chrome mobil
 * Fixed: Removed plugin details from header.
 
 = 1.2 =
-* Update: Plugin is now compatible with Wordpress 4.7.
+* Plugin is now compatible with Wordpress 4.7.
+* Fixed: Plugin script loading on required pages of Dashboard only.
