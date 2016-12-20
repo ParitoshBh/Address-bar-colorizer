@@ -2,8 +2,8 @@
 Contributors: paritoshbh
 Tags: address bar, url bar, google chrome, web browser, mobile browser, color, theme, mobile
 Requires at least: 3.5
-Tested up to: 4.6
-Stable tag: 1.1
+Tested up to: 4.7
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,9 @@ That's how it works. The plugin ONLY applies colorization to Google Chrome mobil
 * New: Lowered minimum Wordpress requirement to version 3.5.
 * Fixed: Removed plugin details from header.
 
+= 1.2 =
+* Update: Plugin is now compatible with Wordpress 4.7.
+
 == Upgrade notice ==
 
 = 1.0 =
@@ -67,3 +70,6 @@ That's how it works. The plugin ONLY applies colorization to Google Chrome mobil
 = 1.1 =
 * New: Lowered minimum Wordpress requirement to version 3.5.
 * Fixed: Removed plugin details from header.
+
+= 1.2 =
+* Update: Plugin is now compatible with Wordpress 4.7.
