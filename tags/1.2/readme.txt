@@ -1,12 +1,11 @@
 === Address Bar Colorizer ===
 Contributors: paritoshbh
-Tags: address bar, url bar, chrome, browser, web browser, mobile browser, color, theme, mobile
-Requires at least: 4.7
-Tested up to: 6.0.1
-Stable tag: 1.3
-Requires PHP: 7.0
+Tags: address bar, url bar, google chrome, web browser, mobile browser, color, theme, mobile
+Requires at least: 3.5
+Tested up to: 4.7
+Stable tag: 1.2
 License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Allows you to define color, for address (url) bar for each post (or sitewide), in Google Chrome web browser (mobile).
 
@@ -64,9 +63,6 @@ That's how it works. The plugin ONLY applies colorization to Google Chrome mobil
 * Plugin is now compatible with Wordpress 4.7.
 * Fixed: Plugin script loading on required pages of Dashboard only.
 
-= 1.3 =
-* Plugin is now compatible with Wordpress 6.0.1.
-
 == Upgrade notice ==
 
 = 1.0 =
@@ -79,6 +75,3 @@ That's how it works. The plugin ONLY applies colorization to Google Chrome mobil
 = 1.2 =
 * Plugin is now compatible with Wordpress 4.7.
 * Fixed: Plugin script loading on required pages of Dashboard only.
-
-= 1.3 =
-* Plugin is now compatible with Wordpress 6.0.1.
